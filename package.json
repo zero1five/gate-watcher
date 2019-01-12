@@ -9,7 +9,7 @@
   "keywords": [],
   "scripts": {
     "build": "bili -o lib",
-    "lint": "eslint src/** --fix",
+    "lint": "eslint src --fix",
     "test": "jest --coverage",
     "commit": "git-cz",
     "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
