@@ -5,6 +5,8 @@ const commitRule = /^(revert: )?(feat|opti|fix|docs|style|refactor|perf|test|wor
 
 const linter = async () => {
   const msg = await read({ edit: true });
+  console.log(msg, typeof msg);
+  process.exit(0);
   if (typeof msg === "string" && !commitRule.test(msg)) {
     console.log();
     console.error(
