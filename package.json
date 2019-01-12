@@ -1,6 +1,6 @@
 {
   "name": "gate-watcher",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "🍓 check your javascript object is charming",
   "main": "lib/gate-watcher.cjs.js",
   "files": [
