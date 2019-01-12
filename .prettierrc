@@ -1,0 +1,9 @@
+{
+  "prettier.semi": false,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.printWidth": 100,
+  "prettier.singleQuote": false,
+  "prettier.eslintIntegration": true,
+  "eslint.autoFixOnSave": true
+}
