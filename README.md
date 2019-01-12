@@ -4,13 +4,11 @@
 
 ## Status
 
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![](https://img.shields.io/circleci/project/github/zero1five/gate-watcher.svg)](https://circleci.com/gh/zero1five/gate-watcher/tree/master)
-[![](https://img.shields.io/npm/v/gate-watcher.svg)](https://www.npmjs.com/package/gate-watcher)
-[![](https://img.shields.io/npm/dm/gate-watcher.svg)](https://www.npmjs.com/package/gate-watcher)
-[![](https://img.shields.io/npm/l/gate-watcher.svg)](https://www.npmjs.com/package/gate-watcher)
-[![](https://img.shields.io/badge/support%20me-donate-ff00ff.svg)](https://www.patreon.com/zero1five)
-[![](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+<div align="center">
+
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![](https://img.shields.io/circleci/project/github/zero1five/gate-watcher.svg)](https://circleci.com/gh/zero1five/gate-watcher/tree/master) [![](https://img.shields.io/npm/v/gate-watcher.svg)](https://www.npmjs.com/package/gate-watcher) [![](https://img.shields.io/npm/dm/gate-watcher.svg)](https://www.npmjs.com/package/gate-watcher) [![](https://img.shields.io/npm/l/gate-watcher.svg)](https://www.npmjs.com/package/gate-watcher) [![](https://img.shields.io/badge/support%20me-donate-ff00ff.svg)](https://www.patreon.com/zero1five) [![](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+
+</div>
 
 ## Contributing
 
