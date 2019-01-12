@@ -10,6 +10,43 @@
 
 </div>
 
+# Getting started
+
+## Installing
+
+Using npm:
+
+```bash
+$ npm install gate-watcher
+```
+or 
+
+```bash
+$ yarn add gate-watcher
+```
+
+## Usage Example
+
+Suppose we have a javascript object and we want to know if it is safe and has the attributes we need.
+
+```javascript
+
+const Watcher = require("gate-watcher");
+
+const source = { attr: "GateWatcher" };
+
+const Judge = Watcher
+  .input(source)
+  .option("attr", String)
+  .parse();
+
+if (Judge) {
+  console.log("cool!");
+  // The attr attribute indeed in the source object!
+}
+
+```
+
 ## Contributing
 
 1. Fork it!
