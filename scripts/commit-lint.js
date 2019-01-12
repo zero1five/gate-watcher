@@ -1,11 +1,11 @@
 const read = require("@commitlint/read");
 const chalk = require("chalk");
 
-const commitRule = /^(revert: )?(feat|opti|fix|docs|style|refactor|perf|test|workflow|build|ci|chore|types|wip)(\(.+\))?: .{1,50}/;
+const commitRule = /^(revert: )?(feat|opti|fix|docs|style|refactor|perf|test|workflow|build|ci|chore|types|wip|)(\(.+\))?: .{1,50}/;
 
 const linter = async () => {
   const msg = await read({ edit: true });
-  if (!commitRule.test(msg)) {
+  if (typeof msg === "string" && !commitRule.test(msg)) {
     console.log();
     console.error(
       `  ${chalk.bgRed.white(" ERROR ")} ${chalk.red(
