@@ -92,7 +92,7 @@ const Judge = Watcher
 
 
 
-### `action(condition: Function, callback: Function)`
+### `action((target: source) => condition: Boolean, (target: source<T>) => target: source<T>)`
 when need fine operate for source object, you can use action.
 
 ```javascript
