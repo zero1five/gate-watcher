@@ -2,7 +2,7 @@
   <img src="/docs/gate-watcher-logo.png" height="200" align="center"/>
 </p>
 
-> 🍓 check your javascript object is charming
+> 🍓 check your javascript object is charming.
 
 ## Status
 
@@ -92,7 +92,7 @@ const Judge = Watcher
 
 
 
-## action(condition: Function, callback: Function)
+### `action(condition: Function, callback: Function)`
 when need fine operate for source object, you can use action.
 
 ```javascript
@@ -104,13 +104,17 @@ const source = { _attr: 10 };
 Watcher
   .input(source)
   .action(
-    target => target._attr == 10,
+    target => target._attr === 10,
     targe => target.attr = 1
   )
   .parse()
 
 // source = { _attr: 10, attr: 1 }
 ```
+
+
+### `parse()`
+parse the GateWatcher program.
 
 ## Contributing
 
