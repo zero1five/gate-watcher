@@ -114,7 +114,7 @@ Watcher
 
 
 ### `parse()`
-parse the GateWatcher program.
+parse the GateWatcher program.
 
 ## Contributing
 
