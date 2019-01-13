@@ -90,6 +90,28 @@ const Judge = Watcher
 // true
 ```
 
+
+
+## action(condition: Function, callback: Function)
+when need fine operate for source object, you can use action.
+
+```javascript
+
+const Watcher = require("gate-watcher");
+
+const source = { _attr: 10 };
+
+Watcher
+  .input(source)
+  .action(
+    target => target._attr == 10,
+    targe => target.attr = 1
+  )
+  .parse()
+
+// source = { _attr: 10, attr: 1 }
+```
+
 ## Contributing
 
 1. Fork it!
