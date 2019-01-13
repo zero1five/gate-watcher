@@ -126,10 +126,10 @@ parse the GateWatcher program.
 ## Author
 
 **gate-watcher** © [zero1five](https://github.com/zero1five), Released under the [MIT](./LICENSE) License.<br>
-Authored and maintained by HcySunYang.
+Authored and maintained by zero1five.
 
 > [github.com/zero1five](https://github.com/zero1five) · GitHub [@zero1five](https://github.com/zero1five) · Twitter [@zero1five](https://twitter.com/zero1five)
 
 ## License
 
-MIT &copy; zero1five
+[MIT](https://github.com/zero1five/gate-watcher/blob/master/LICENSE) &copy; zero1five
