@@ -12,8 +12,6 @@
 
 </div>
 
-# Getting started
-
 ## Installing
 
 Using npm:
@@ -47,6 +45,49 @@ if (Judge) {
   // The attr attribute indeed in the source object!
 }
 
+```
+
+## API
+
+### `input(source: Object)`
+Receive objects that need to be verified.
+
+### `option(attr: String, type: Type, defaultValue: any)`
+
+- When there is only one parameter, Will only verify that the attribute exists.
+
+```javascript
+
+const source = { attr: "GateWatcher" };
+
+const Judge = Watcher
+  .input(source)
+  .option("attr")
+  .parse();
+
+// Judge = true
+```
+
+- When two parameters are used, the type is also checked.
+
+```javascript
+
+...
+  .option("attr", String)
+  .parse();
+
+// true
+```
+
+- When the parameter is complete, if the type is not correct, return false. If the property does not exist, the default value will be added to the source and return true.
+
+```javascript
+
+...
+  .option("attr", String, "defaultValue")
+  .parse();
+
+// true
 ```
 
 ## Contributing
