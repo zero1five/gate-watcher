@@ -50,7 +50,7 @@ if (Judge) {
 ## API
 
 ### `input(source: Object)`
-Receive objects that need to be verified.
+Receive objects that need to be verified.
 
 ### `option(attr: String, type: Type, defaultValue: any)`
 
@@ -87,7 +87,7 @@ const Judge = Watcher
   .option("attr", String, "defaultValue")
   .parse();
 
-// true
+// true
 ```
 
 ## Contributing
