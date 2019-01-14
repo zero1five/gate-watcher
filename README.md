@@ -52,7 +52,7 @@ if (Judge) {
 ### `input(source: Object)`
 Receive objects that need to be verified.
 
-### `option(attr: String, type: Type, defaultValue: any)`
+### `option(attr: String, type: Type | [Type], defaultValue: any)`
 
 - When there is only one parameter, Will only verify that the attribute exists.
 

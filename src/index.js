@@ -56,8 +56,18 @@ GateWatcher.prototype.option = function(attribute, type, defaultValue) {
 
   if (!attrExist) {
     this.result = false;
-  } else if (type && this.target[attribute].constructor !== type) {
-    this.result = false;
+  } else if (type) {
+    if (type === String && this.target[attribute].constructor !== type) {
+      this.result = false;
+    } else if (type === Array && type.length) {
+      if (type.find(x => this.target[attribute].constructor === x)) {
+        this.result = true;
+      } else {
+        this.result = false;
+      }
+    } else {
+      this.result = true;
+    }
   } else {
     this.result = true;
   }
