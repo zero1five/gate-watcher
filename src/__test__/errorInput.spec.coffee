@@ -14,4 +14,11 @@ describe 'GateWatcher', ->
         .parse()
     ).toBe true
 
-  
+  it 'when aption accepted array types of type', ->
+    source = { attr: 2 }
+    expect(
+      G
+        .input(source)
+        .option('attr', [String, Number, Array])
+        .parse()
+    ).toBe true
