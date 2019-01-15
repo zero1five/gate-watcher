@@ -50,11 +50,13 @@ GateWatcher.prototype.option = function(attribute, type, defaultValue) {
 
   if (attrExists) {
     if (type && type.constructor.name === "Array") {
-      if (type.find(x => this.target[attribute].constructor === x)) {
-        this.result = true;
-      } else {
-        this.result = false;
+      for (let i = 0, l = type.length; i < l; i++) {
+        if (this.target[attribute].constructor === type[i]) {
+          this.result = true;
+          return this;
+        }
       }
+      this.result = false;
     } else if (type && this.target[attribute].constructor === type) {
       this.result = true;
     } else {
