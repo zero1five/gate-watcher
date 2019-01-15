@@ -9,8 +9,7 @@ describe 'GateWatcher', ->
     expect(
       G
         .input(source)
-        .option('attr', String)
-        .option('attr', Number)
+        .option('attr', [String, Number])
         .parse()
     ).toBe true
 
