@@ -21,3 +21,14 @@ describe 'GateWatcher', ->
         .option('attr', [String, Number, Array])
         .parse()
     ).toBe true
+
+  it 'when test a property continuously if has anyone case not pass just directly false', ->
+    source = { attr: 2 }
+    expect(
+      G
+        .input(source)
+        .option('attr', String)
+        .option('attr', Number)
+        .option('attr', String)
+        .parse()
+    ).toBe false
