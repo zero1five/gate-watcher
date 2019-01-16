@@ -1,7 +1,7 @@
 {
   "name": "gate-watcher",
   "version": "1.0.2",
-  "description": "🍓 check your javascript object is charming",
+  "description": "check your javascript object is charming",
   "main": "lib/gate-watcher.cjs.js",
   "files": [
     "lib"
@@ -14,7 +14,8 @@
     "commit": "git-cz",
     "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
     "release": "release-it --no-git.requireCleanWorkingDir",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "push": "node ./scripts/push"
   },
   "repository": {
     "url": "https://github.com/zero1five/gate-watcher",
