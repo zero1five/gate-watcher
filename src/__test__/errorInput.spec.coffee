@@ -32,3 +32,16 @@ describe 'GateWatcher', ->
         .option('attr', String)
         .parse()
     ).toBe false
+
+  it 'when action not match by options match this attr', ->
+    source = { attr: 1 }
+    expect(
+      G
+        .input(source)
+        .action(
+          (target) -> target.attr == 10,
+          (target) -> target.side = 199
+        )
+        .option('side', Number, 199)
+        .parse()
+    ).toBe true

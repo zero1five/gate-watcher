@@ -76,7 +76,8 @@ GateWatcher.prototype.action = function(validitor, callback) {
   const condition = validitor(this.target);
 
   if (condition) {
-    this.target = callback(this.target);
+    callback(this.target);
+    console.log(this.target);
   }
 
   return this;
