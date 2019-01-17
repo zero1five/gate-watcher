@@ -45,3 +45,13 @@ describe 'GateWatcher', ->
         .option('side', Number, 199)
         .parse()
     ).toBe true
+
+  it 'when options received three paramters', ->
+    source = { attr: 1 }
+    G
+      .input(source)
+      .option('side', [String, Number], 199)
+      .parse()
+    expect(
+      source.side
+    ).toBe 199
