@@ -55,3 +55,16 @@ describe 'GateWatcher', ->
     expect(
       source.side
     ).toBe 199
+  
+  it 'when action received error input', ->
+    source = { attr: 1 }
+    expect(
+      G
+        .input(source)
+        .action(
+          (target) -> target,
+          (target) -> target = target
+        )
+        .option("attr", Number)
+        .parse()
+    ).toBe true
