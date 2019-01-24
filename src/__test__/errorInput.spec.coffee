@@ -4,24 +4,6 @@ describe 'GateWatcher', ->
   beforeEach -> 
     G = require '..'
 
-  it 'when continuously judge the same attribute', ->
-    source = { attr: 1 }
-    expect(
-      G
-        .input(source)
-        .option('attr', [String, Number])
-        .parse()
-    ).toBe true
-
-  it 'when aption accepted array types of type', ->
-    source = { attr: 2 }
-    expect(
-      G
-        .input(source)
-        .option('attr', [String, Number, Array])
-        .parse()
-    ).toBe true
-
   it 'when test a property continuously if has anyone case not pass just directly false', ->
     source = { attr: 2 }
     expect(
@@ -66,23 +48,5 @@ describe 'GateWatcher', ->
           (target) -> target = target
         )
         .option("attr", Number)
-        .parse()
-    ).toBe true
-
-  it 'when there are multiple attributes', ->
-    source = { c: 1 }
-    expect(
-      G
-        .input(source)
-        .option(['a', 'b', 'c'])
-        .parse()
-    ).toBe true
-
-  it 'when there are multiple attributes and has received type', ->
-    source = { c: 1 }
-    expect(
-      G
-        .input(source)
-        .option(['a', 'b', 'c'], Number)
         .parse()
     ).toBe true

@@ -2,10 +2,8 @@
  * GateWatcher
  *  .input(target)
  *  .option('attribute', type, defaultValue)
- *  .option('attribute', type, defaultValue)
- *  .action(target => {} : condition, target => {} : target)
+ *  .exist([attr, attr, ...])
  *  .parse()
- *
  * return Boolean
  */
 
@@ -46,44 +44,42 @@ GateWatcher.prototype.option = function(attribute, type, defaultValue) {
     warning(false, "option requires at least one param");
   }
 
-  let attrExists;
+  const attrExist = existAttr(this.target, attribute);
 
-  if (attribute.constructor.name === "Array") {
-    for (let i = 0, l = attribute.length; i < l; i++) {
-      if (existAttr(this.target, attribute[i])) {
-        attrExists = true;
-        i = l;
-      } else {
-        attrExists = false;
-      }
-    }
-  } else {
-    attrExists = existAttr(this.target, attribute);
-  }
-
-  if (attrExists) {
-    if (type && type.constructor.name === "Array") {
-      for (let i = 0, l = type.length; i < l; i++) {
-        if (this.target[attribute].constructor === type[i]) {
-          this.result = true;
-          return this;
-        }
-      }
-      this.result = false;
-    } else if (type && this.target[attribute].constructor === type) {
-      this.result = true;
-    } else if (!type) {
-      this.result = true;
-    } else {
-      this.result = false;
-    }
-  } else if (defaultValue) {
+  if (defaultValue && !attrExist) {
     this.target[attribute] = defaultValue;
     this.result = true;
-  } else {
-    this.result = false;
+    return this;
   }
 
+  if (!attrExist) {
+    this.result = false;
+  } else if (type && this.target[attribute].constructor !== type) {
+    this.result = false;
+  } else {
+    this.result = true;
+  }
+
+  return this;
+};
+
+GateWatcher.prototype.exist = function(attrs) {
+  if (!attrs || attrs.constructor.name !== "Array") {
+    this.resetState();
+    warning(
+      false,
+      "exist requires at least one param and type of attributes must is array."
+    );
+  }
+
+  for (let i = 0, l = attrs.length; i < l; i++) {
+    if (existAttr(this.target, attrs[i])) {
+      this.result = true;
+      return this;
+    }
+  }
+
+  this.result = false;
   return this;
 };
 

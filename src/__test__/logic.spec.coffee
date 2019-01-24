@@ -110,7 +110,7 @@ describe 'GateWatcher', ->
         .parse()
     ).toBe true
 
-  it 'When the test attribute is zero', ->
+  it 'when the test attribute is zero', ->
     source = { attr: 0 }
     expect(
       G
@@ -118,3 +118,26 @@ describe 'GateWatcher', ->
         .option('attr', Number)
         .parse()
     ).toBe true
+
+  it 'when exist attributes', -> 
+    source = { attr: 0 }
+    expect(
+      G
+        .input(source)
+        .exist(['attr', 'side', 'outer'])
+        .parse()
+    ).toBe true
+
+  it 'when accepted wrong input in the exist api', ->
+    expect(
+      -> G.input({}).exist('attr').parse()
+    ).toThrowError 'exist requires at least one param and type of attributes must is array.'
+
+  it 'when exist not matches', ->
+    source = { attr: 0 }
+    expect(
+      G
+        .input(source)
+        .exist(['side', 'inner', 'outer'])
+        .parse()
+    ).toBe false
