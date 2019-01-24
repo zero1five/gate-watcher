@@ -28,10 +28,10 @@ describe 'GateWatcher', ->
     ).toBe true
 
   it 'when option accepted one paramters', ->
-    source = { a: 1 }
+    source = { loginName: "1235" }
     expect(
       G
         .input(source)
-        .option(['a', 'b'])
+        .option(['loginName'])
         .parse()
     ).toBe true
