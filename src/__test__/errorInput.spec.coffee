@@ -68,3 +68,21 @@ describe 'GateWatcher', ->
         .option("attr", Number)
         .parse()
     ).toBe true
+
+  it 'when there are multiple attributes', ->
+    source = { c: 1 }
+    expect(
+      G
+        .input(source)
+        .option(['a', 'b', 'c'])
+        .parse()
+    ).toBe true
+
+  it 'when there are multiple attributes and has received type', ->
+    source = { c: 1 }
+    expect(
+      G
+        .input(source)
+        .option(['a', 'b', 'c'], Number)
+        .parse()
+    ).toBe true
