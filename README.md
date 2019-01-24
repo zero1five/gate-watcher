@@ -38,6 +38,7 @@ const source = { attr: "GateWatcher" };
 const Judge = Watcher
   .input(source)
   .option("attr", String)
+  .exist(['attr', 'inner', 'outer'])
   .parse();
 
 if (Judge) {
@@ -52,7 +53,7 @@ if (Judge) {
 ### `input(source: Object)`
 Receive objects that need to be verified.
 
-### `option(attr: String | [String], type: Type | [Type], defaultValue: any)`
+### `option(attr: String, type: Type, defaultValue: T)`
 
 - When there is only one parameter, Will only verify that the attribute exists.
 
@@ -63,7 +64,6 @@ const source = { attr: "GateWatcher" };
 const Judge = Watcher
   .input(source)
   .option("attr")
-  .option(["attr", "side"])
   .parse();
 
 // Judge = true
@@ -86,6 +86,21 @@ const Judge = Watcher
 
 ...
   .option("attr", String, "defaultValue")
+  .parse();
+
+// true
+```
+
+### `exist(attrs: [attr])`
+check the attributes that need to be verified.
+
+```javascript
+
+const source = { attr: "GateWatcher" };
+
+const Judge = Watcher
+  .input(source)
+  .exist(["attr", "side"])
   .parse();
 
 // true
