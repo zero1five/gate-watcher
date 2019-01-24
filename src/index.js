@@ -46,7 +46,20 @@ GateWatcher.prototype.option = function(attribute, type, defaultValue) {
     warning(false, "option requires at least one param");
   }
 
-  const attrExists = existAttr(this.target, attribute);
+  let attrExists;
+
+  if (attribute.constructor.name === "Array") {
+    for (let i = 0, l = attribute.length; i < l; i++) {
+      if (existAttr(this.target, attribute[i])) {
+        attrExists = true;
+        i = l;
+      } else {
+        attrExists = false;
+      }
+    }
+  } else {
+    attrExists = existAttr(this.target, attribute);
+  }
 
   if (attrExists) {
     if (type && type.constructor.name === "Array") {
@@ -58,6 +71,8 @@ GateWatcher.prototype.option = function(attribute, type, defaultValue) {
       }
       this.result = false;
     } else if (type && this.target[attribute].constructor === type) {
+      this.result = true;
+    } else if (!type) {
       this.result = true;
     } else {
       this.result = false;

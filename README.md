@@ -52,7 +52,7 @@ if (Judge) {
 ### `input(source: Object)`
 Receive objects that need to be verified.
 
-### `option(attr: String, type: Type | [Type], defaultValue: any)`
+### `option(attr: String:[String], type: Type | [Type], defaultValue: any)`
 
 - When there is only one parameter, Will only verify that the attribute exists.
 
@@ -63,6 +63,7 @@ const source = { attr: "GateWatcher" };
 const Judge = Watcher
   .input(source)
   .option("attr")
+  .option(["attr", "side"])
   .parse();
 
 // Judge = true

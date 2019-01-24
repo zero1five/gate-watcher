@@ -26,3 +26,12 @@ describe 'GateWatcher', ->
         .option('e', Object, { f: 1 })
         .parse()
     ).toBe true
+
+  it 'when option accepted one paramters', ->
+    source = { a: 1 }
+    expect(
+      G
+        .input(source)
+        .option(['a', 'b'])
+        .parse()
+    ).toBe true
