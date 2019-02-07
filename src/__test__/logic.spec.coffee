@@ -141,3 +141,12 @@ describe 'GateWatcher', ->
         .exist(['side', 'inner', 'outer'])
         .parse()
     ).toBe false
+
+  it 'when exist can matches', ->
+    source = { attr: 0 }
+    expect(
+      G
+        .input(source)
+        .exist(['side', 'inner', 'attr'])
+        .parse()
+    ).toBe true
