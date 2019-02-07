@@ -50,3 +50,21 @@ describe 'GateWatcher', ->
         .option("attr", Number)
         .parse()
     ).toBe true
+
+  it 'when options received error input', ->
+    source = { attr: 1 }
+    expect(
+      G
+        .input(source)
+        .option('attr', [String])
+        .parse()
+    ).toBe false
+  
+  it 'when options received error input', ->
+    source = {}
+    expect(
+      G
+        .input(source)
+        .option('attr', [String], 1234)
+        .parse()
+    ).toBe true
