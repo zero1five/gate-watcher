@@ -2,7 +2,7 @@
   <img src="/docs/gate-watcher-logo.png" height="200" align="center"/>
 </p>
 
-> 🍓 check your javascript object is charming.
+> check your javascript object is charming.
 
 ## Status
 
